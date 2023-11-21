@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoList from "./Components/TodoList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const todoArray = [
+        {
+            id: 1,
+            title: "Todo 1",
+            completed: true,
+        },
+        {
+            id: 2,
+            title: "Todo 2",
+            completed: false,
+        },
+    ];
+
+    return (
+        <div className={"container"}>
+            {/* Передаем todoArray в TodoList через пропс */}
+            <TodoList todos={todoArray} />
+        </div>
+    );
 }
 
 export default App;
